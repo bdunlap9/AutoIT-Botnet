@@ -2,15 +2,15 @@
 When sending commands make sure that the selected command name precedes the input
 
 # Commands
-Run application
+Run? <location>
 
-Download files
+Download? <url> ? <location>
 
-Visit (hidden)
+Visit? <url>
 
-kill proccess
+Kill? <process name>
 
-Delete files
+Delete? <location>
 
 Box? <title> ? <message>
   
